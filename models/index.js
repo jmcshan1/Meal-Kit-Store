@@ -4,12 +4,16 @@ const Style = require('./Style');
 const User = require('./User');
 const Order = require('./Order');
 
-Protien.hasMany(Product, {
-  foreignKey: 'product_id',
-});
+// Protien.belongsTo(Product, {
+//   foreignKey: 'product_id',
+// });
 
-Style.hasMany(Product, {
-  foreignKey: 'product_id',
-});
+// Style.belongsTo(Product, {
+//   foreignKey: 'product_id',
+// });
+
+// // User.hasOne(Order, {
+// //   foreignKey: 'product_id',
+// // });
 
 module.exports = { Product, Protien, Style, User, Order };

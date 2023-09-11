@@ -1,0 +1,1 @@
+const { Protien } = require('../models');
