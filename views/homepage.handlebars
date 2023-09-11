@@ -1,9 +1,37 @@
-{{#each styles as |style| }}
-<div class="row align-center mb-5">
-  <div class="col-md-6">
+<header>
+  <div>
+    <h1>Techsperts Meal Kit Store</h1>
   </div>
-  <div class="col-md-6">
-    <h3><a href="mailto:">{{style.name}}</a></h3>
+  <div>
+    <nav>
+      <a href="">Login</a>
+      <a href="">New User</a>
+    </nav>
+</header>
+<main>
+  <img src="" alt="Background Image">
+  <div>
+    {{!-- Takes to products page --}}
+    <button> Browse Meal Kits</button>
+    {{!-- Drop down menu to select styles --}}
+    <form action="">
+      <label for="style">Choose a Style of Meal:</label>
+      <select name="style" id="style">
+        <option value="American">American</option>
+        <option value="Japanese">Japanese</option>
+        <option value="Chinese">Chinese</option>
+        <option value="Greek">Greek</option>
+      </select>
+    </form>
+    {{!-- Drop down menu to select protein --}}
+    <form action="">
+      <label for="style">Choose a protein for your Meal:</label>
+      <select name="style" id="style">
+        <option value="Chicken">Chicken</option>
+        <option value="Beef">Beef</option>
+        <option value="Pork">Pork</option>
+        <option value="Plant-Based">Plant-Based</option>
+      </select>
+    </form>
   </div>
-</div>
-{{/each}}
+</main>
