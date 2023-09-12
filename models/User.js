@@ -33,6 +33,13 @@ User.init(
         len: [8, 20],
       },
     },
+    order_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'order',
+        key: 'id',
+      }
+    },
   },
   {
     hooks: {

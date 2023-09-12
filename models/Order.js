@@ -23,8 +23,8 @@ Order.init(
         key: 'id',
       },
     },
-    product: {
-      type: DataTypes.STRING,
+    product_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'product',
