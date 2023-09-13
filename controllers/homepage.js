@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Style, Protien, Product } = require('../models');
+const { Style, Protien, Product } = require('../models');
 // const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -35,30 +35,36 @@ router.get('/products', async (req, res) => {
   }
 });
 
-router.get('/product/:pid/order', async (req, res) => {
+// router.get('/product/:pid/order', async (req, res) => {
+//   try {
+//     const productData = await Product.findByPk({
+//       where: {
+//         id: req.params.pid,
+//       },
+//     });
+
+//     const product = productData.map((product) => product.get({ plain: true }));
+
+//     res.render('product', {
+//       product,
+//         logged_in: req.session.logged_in,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+router.get('/products/protien/', async (req, res) => {
   try {
-    const productData = await Product.findByPk({
-      where: {
-        id: req.params.pid,
-      },
-    });
+    const protienId = req.query.protien;
 
-    const product = productData.map((product) => product.get({ plain: true }));
+    if (!protienId) {
+      return res.status (400).json({ message: 'No protien selected' });
+    }
 
-    res.render('product', {
-      product,
-      //   logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get('/products/protien/:pid', async (req, res) => {
-  try {
     const productData = await Product.findAll({
       where: {
-        protien_id: req.params.pid,
+        protien_id: protienId,
       },
     });
 
@@ -73,11 +79,17 @@ router.get('/products/protien/:pid', async (req, res) => {
   }
 });
 
-router.get('/products/style/:sid', async (req, res) => {
+router.get('/products/style/', async (req, res) => {
   try {
+    const styleId = req.query.style;
+
+    if (!styleId) {
+      return res.status (400).json({ message: 'No style selected' });
+    }
+
     const productData = await Product.findAll({
       where: {
-        style_id: req.params.sid,
+        style_id: styleId,
       },
     });
 
@@ -92,24 +104,23 @@ router.get('/products/style/:sid', async (req, res) => {
   }
 });
 
-router.get('/products/:pid', async (req, res) => {
-  try {
-    const productData = await Product.findAll({
-      where: {
-        protien_id: req.params.pid,
-      },
-    });
+// router.get('/product/:id', async (req, res) => {
+//   try {
+//     const productData = await Product.findByPk({
+//       where: {
+//         id: req.params.pid,
+//       },
+//     });
 
-    const products = productData.map((product) => product.get({ plain: true }));
+//     const product = productData.map((product) => product.get({ plain: true }));
 
-    res.render('products', {
-      products,
-      //   logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.render('product', {
+//       product,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // router.get('/profile', withAuth, async (req, res) => {
 //   try {

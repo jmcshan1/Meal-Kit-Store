@@ -1,33 +1,34 @@
+<!DOCTYPE html>
 <html lang='en'>
-
-  <head>
+  
+<head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com/2.2.15/tailwind.min.css">
     <title>Meal Kit Store</title>
     <link rel='stylesheet' href='/css/style.css' />
-  </head>
+</head>
 
-  <body>
-    <header class='display-flex justify-space-between align-center p-2'>
-      <a href=''>
-        <h1>
-          Techsperts Meal Kit Store
-        </h1>
-      </a>
-      {{!-- {{#if logged_in}} --}}
-      <nav>
-        <a href=''>Login</a>
-        <a href=''>New User</a>
-      </nav>
-      {{!-- {{/if}} --}}
+<body class="bg-gray-100">
+    <header class='bg-blue-500 p-2 flex justify-between items-center'>
+        <a href='/'>
+            <h1 class="text-white text-2xl font-bold">
+                Techsperts Meal Kit Store
+            </h1>
+        </a>
+        <nav>
+            <a href='/login' class="text-white mr-2">Login</a>
+            <a href='/login' class="text-white">New User</a>
+        </nav>
     </header>
-    <main class='container container-fluid mt-5'>
-      <img src='' alt='Background Image' />
-      {{{body}}}
+    <main class='container mx-auto mt-5'>
+        <img src='https://example.com/your-background-image.jpg' alt='Background Image' class="w-full" />
+        {{{body}}}
     </main>
-    <footer>
+    <footer class="bg-blue-500 p-2 text-white text-center">
+        &copy; 2023 Techsperts Meal Kit Store
     </footer>
     <script src='/js/logout.js'></script>
-  </body>
+</body>
 
 </html>

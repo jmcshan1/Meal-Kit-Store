@@ -3,30 +3,35 @@
     {{!-- Takes to products page --}}
     <button> Browse Meal Kits</button>
     {{!-- Drop down menu to select styles --}}
-    <form action="">
+    <form class="style-form" action="/products/style/" method="get">
       <label for="style">Choose a Style of Meal:</label>
       <select name="style" id="style">
-        <option value="American">Mexican</option>
+        <option value="" disabled selected>Select your Style</option>
+        {{#each styles}}
+        <option value="{{id}}">{{style_name}}</option>
+        {{/each}}
+        {{!-- <option value="American">Mexican</option>
         <option value="Japanese">Italian</option>
         <option value="Chinese">American/continental</option>
         <option value="Greek">Asian</option>
         <option value="Greek">Seafood</option>
         <option value="Greek">Mediteranean</option>
-        <option value="Greek">Vegitarian</option>
+        <option value="Greek">Vegitarian</option> --}}
       </select>
+        <button type="submit">Search Styles</button>
     </form>
     {{!-- Drop down menu to select protein --}}
-    <form action="">
+    <form class="protein-form" action="/products/protien/" method="get">
       <label for="style">Choose a protein for your Meal:</label>
-      <select name="protein" id="protein">
-        <option value="Chicken">Chicken</option>
-        <option value="Beef">Beef</option>
-        <option value="Pork">Pork</option>
-        <option value="Plant-Based">Fish</option>
-        <option value="Plant-Based">Tofu</option>
-        <option value="Plant-Based">Vegitarian</option>
-        <option value="Plant-Based">Lamb</option>
+      <select name="protien" id="protein">
+        <option value="" disabled selected>Select your Protein</option>
+        {{#each protiens}}
+        <option value="{{id}}">{{protien_name}}</option>
+        {{/each}}
       </select>
+      <button type="submit">Search Protein</button>
     </form>
   </div>
 </main>
+
+{{!-- <script src="/js/homepage.js"></script> --}}

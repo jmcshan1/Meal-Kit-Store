@@ -1,11 +1,10 @@
 {{#each products as |product|}}
   <div>
     <div>
-      <img src='{{product.picture}}' alt='Picture of Meal Kit' />
+      <img src='{{picture}}' alt='Picture of Meal Kit' />
     </div>
     <div>
-      <h3>{{product.product_name}}</h3>
-      <p>{{product.product_description}}</p>
+      <h3><a href="/api/products/{{this.id}}">{{product_name}}</a></h3>
     </div>
   </div>
 {{/each}}
