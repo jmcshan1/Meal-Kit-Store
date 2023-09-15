@@ -1,7 +1,7 @@
 <div>
   <form action="">
     <label for='userId'>User ID</label>
-    <input id="userId" type='text' value='{{user.id}}' required />
+    <input id="userId" type='text' value='{{user}}' required />
 
     <label for='productId'>Product ID</label>
     <input id="productId" type='text' value ='{{product.id}}' placeholder='Enter Address' required />
@@ -26,7 +26,9 @@
   <option value="PayPal">PayPal</option>
   <option value="COD">COD</option>
   <option value="Visa">Visa</option>
-
-  <button id="orderButton">Sumbit</button>
+</select>
+  <button id="orderButton">Submit</button>
   </form>
 </div>
+
+<script src="/js/order.js"></script>

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Product } = require('../../models');
+const { Product, Order } = require('../../models');
 //route to take us to order page with a specific product IF and user information
 router.get('/:id', async (req, res) => {
   console.log('order route hit');
@@ -9,11 +9,14 @@ router.get('/:id', async (req, res) => {
 
     const product = productData.get({ plain: true });
     // const user = userData.map((user) => user.get({ plain: true }));
+    const user = req.session.user_id;
+
     res.render('orders', {
       product,
-      //   user
-      // logged_in: req.session.logged_in
+      user,
+      logged_in: req.session.logged_in,
     });
+    console.log(user);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -30,9 +33,8 @@ router.post('/', async (req, res) => {
     }
 
     const newOrder = await Order.create({
-      product_id,
-      // user_id: req.session.user_id,
       user_id,
+      product_id,
       quantity,
       address,
       city,
@@ -42,6 +44,7 @@ router.post('/', async (req, res) => {
     });
     res.status(200).json(newOrder);
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
