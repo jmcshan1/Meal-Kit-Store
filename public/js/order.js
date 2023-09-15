@@ -1,3 +1,5 @@
+async function newFormHandler() {
+event.preventDefault();
 const productId = document.querySelector('#productId').value.trim();
 const userId = document.querySelector('#userId').value.trim();
 
@@ -7,7 +9,7 @@ const city = document.querySelector('#city').value.trim();
 const state = document.querySelector('#state').value.trim();
 const zipcode = document.querySelector('#zipcode').value;
 
-async function newFormHandler() {
+
   if (address && quantity && city && state && zipcode && productId && userId) {
     const response = await fetch('/api/orders', {
       method: 'POST',
