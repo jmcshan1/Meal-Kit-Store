@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Style, Protien, Product, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/login', withAuth, async (req, res) => {
+router.get('/login', async (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/');
