@@ -1,3 +1,4 @@
+{{#if logged_in}}
 {{#each products as |product|}}
   <div>
     <div>
@@ -8,3 +9,8 @@
     </div>
   </div>
 {{/each}}
+{{else}}
+<div class="alert alert-warning" role="alert">
+    <p>You need to log in to view the products.</p>
+</div>
+{{/if}}

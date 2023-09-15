@@ -1,7 +1,11 @@
 <main>
   <div>
+    {{#if logged_in}}
     {{!-- Takes to products page --}}
-    <button> Browse Meal Kits</button>
+    <a href="/products">
+      <button> Browse Meal Kits</button>
+    </a>
+    
     {{!-- Drop down menu to select styles --}}
     <form class="style-form" action="/products/style/" method="get">
       <label for="style">Choose a Style of Meal:</label>
@@ -10,13 +14,6 @@
         {{#each styles}}
         <option value="{{id}}">{{style_name}}</option>
         {{/each}}
-        {{!-- <option value="American">Mexican</option>
-        <option value="Japanese">Italian</option>
-        <option value="Chinese">American/continental</option>
-        <option value="Greek">Asian</option>
-        <option value="Greek">Seafood</option>
-        <option value="Greek">Mediteranean</option>
-        <option value="Greek">Vegitarian</option> --}}
       </select>
         <button type="submit">Search Styles</button>
     </form>
@@ -31,6 +28,11 @@
       </select>
       <button type="submit">Search Protein</button>
     </form>
+    {{else}}
+    <div class="alert alert-warning" role="alert">
+    <p>You need to log in to view the products.</p>
+</div>
+{{/if}}
   </div>
 </main>
 

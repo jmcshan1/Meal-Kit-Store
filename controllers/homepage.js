@@ -1,9 +1,20 @@
 const router = require('express').Router();
-const { Style, Protien, Product } = require('../models');
-// const withAuth = require('../utils/auth');
+const { Style, Protien, Product, User } = require('../models');
+const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/login', async (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('login');
+});
+
+router.get('/', withAuth, async (req, res) => {
   try {
+
     const styleData = await Style.findAll();
     const protienData = await Protien.findAll();
 
@@ -20,7 +31,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/products', async (req, res) => {
+router.get('/products', withAuth, async (req, res) => {
   try {
     const productData = await Product.findAll({});
 
@@ -28,33 +39,14 @@ router.get('/products', async (req, res) => {
 
     res.render('products', {
       products,
-      //   logged_in: req.session.logged_in,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// router.get('/product/:pid/order', async (req, res) => {
-//   try {
-//     const productData = await Product.findByPk({
-//       where: {
-//         id: req.params.pid,
-//       },
-//     });
-
-//     const product = productData.map((product) => product.get({ plain: true }));
-
-//     res.render('product', {
-//       product,
-//         logged_in: req.session.logged_in,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-router.get('/products/protien/', async (req, res) => {
+router.get('/products/protien/', withAuth, async (req, res) => {
   try {
     const protienId = req.query.protien;
 
@@ -79,7 +71,7 @@ router.get('/products/protien/', async (req, res) => {
   }
 });
 
-router.get('/products/style/', async (req, res) => {
+router.get('/products/style/', withAuth, async (req, res) => {
   try {
     const styleId = req.query.style;
 
@@ -97,67 +89,11 @@ router.get('/products/style/', async (req, res) => {
 
     res.render('products', {
       products,
-      //   logged_in: req.session.logged_in,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
-
-// router.get('/product/:id', async (req, res) => {
-//   try {
-//     const productData = await Product.findByPk({
-//       where: {
-//         id: req.params.pid,
-//       },
-//     });
-
-//     const product = productData.map((product) => product.get({ plain: true }));
-
-//     res.render('product', {
-//       product,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-// router.get('/profile', withAuth, async (req, res) => {
-//   try {
-//     const userData = await User.findByPk(req.session.user_id, {
-//       attributes: { exclude: ['password'] },
-//       include: [{ model: Project }],
-//     });
-
-//     const user = userData.get({ plain: true });
-
-//     res.render('profile', {
-//       user,
-//       logged_in: true,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/profile');
-    return;
-  }
-
-  res.render('login');
-});
-
-// router.get('/order', (req, res) => {
-//   // If the user is already logged in, redirect the request to another route
-//   if (req.session.logged_in) {
-//     res.redirect('/profile');
-//     return;
-//   }
-
-//   res.render('orders');
-// });
 
 module.exports = router;

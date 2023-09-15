@@ -4,9 +4,9 @@
 <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <link rel="stylesheet" href="https://cdn.tailwindcss.com/2.2.15/tailwind.min.css">
+    <link rel="stylesheet" href="/css/output.css">
+    <link rel='stylesheet' href='../../public/css/style.css' />
     <title>Meal Kit Store</title>
-    <link rel='stylesheet' href='/css/style.css' />
 </head>
 
 <body class="bg-gray-100">
@@ -17,12 +17,16 @@
             </h1>
         </a>
         <nav>
+            {{#if logged_in}}
+            <a href='/logout' id="logout" class="text-white ml-2">Logout</a>
+            {{else}}
             <a href='/login' class="text-white mr-2">Login</a>
             <a href='/login' class="text-white">New User</a>
+            {{/if}}
         </nav>
     </header>
     <main class='container mx-auto mt-5'>
-        <img src='https://example.com/your-background-image.jpg' alt='Background Image' class="w-full" />
+        <img src='/assets/mealkit-background.jpg' alt='Background Image' class="w-full" />
         {{{body}}}
     </main>
     <footer class="bg-blue-500 p-2 text-white text-center">
