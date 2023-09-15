@@ -1,4 +1,5 @@
 {{!-- order form  --}}
+{{#if logged_in}}
 <div>
   <div>
     <img src='{{product.picture}}' alt='Picture of Meal Kit' />
@@ -10,5 +11,8 @@
 </div>
 
 {{> order-details}}
-
-<script src="/js/order.js"></script>
+{{else}}
+<div class="alert alert-warning" role="alert">
+    <p>You need to log in to view the product details.</p>
+</div>
+{{/if}}
