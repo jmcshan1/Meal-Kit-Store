@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { Product, Order } = require('../../models');
+const withAuth = require('../utils/auth');
 //route to take us to order page with a specific product IF and user information
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
   console.log('order route hit');
   try {
     const productData = await Product.findByPk(req.params.id);

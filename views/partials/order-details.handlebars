@@ -1,3 +1,4 @@
+{{#if logged_in}}
 <div>
   <form action="">
     <label for='userId'>User ID</label>
@@ -30,5 +31,10 @@
   <button id="orderButton">Submit</button>
   </form>
 </div>
+{{else}}
+<div class="alert alert-warning" role="alert">
+    <p>You need to log in to order products</p>
+</div>
+{{/if}}
 
 <script src="/js/order.js"></script>

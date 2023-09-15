@@ -1,14 +1,19 @@
+{{#if logged_in}}
 <div>
   <div>
     <img src='{{product.picture}}' alt='Picture of Meal Kit' />
   </div>
   <div>
     <h3>{{product.product_name}}</h3>
-    <p>{{product.product_description}}</p>
+    <p>{{product.product_details}}</p>
   </div>
 </div>
 
 <a href="/api/orders/{{product.id}}">
   <button>Order</button>
 </a>
-
+{{else}}
+<div class="alert alert-warning" role="alert">
+    <p>You need to log in to view the product information.</p>
+</div>
+{{/if}}

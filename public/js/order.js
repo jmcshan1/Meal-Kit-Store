@@ -2,25 +2,26 @@ async function newFormHandler() {
 event.preventDefault();
 const productId = document.querySelector('#productId').value.trim();
 const userId = document.querySelector('#userId').value.trim();
-
 const address = document.querySelector('#address').value.trim();
 const quantity = document.querySelector('#quantity').value;
 const city = document.querySelector('#city').value.trim();
 const state = document.querySelector('#state').value.trim();
 const zipcode = document.querySelector('#zipcode').value;
+const paymentType = document.querySelector('#payment-method').value.trim();
 
 
   if (address && quantity && city && state && zipcode && productId && userId) {
     const response = await fetch('/api/orders', {
       method: 'POST',
       body: JSON.stringify({
+        product_id: productId,
+        user_id: userId,
         address,
         quantity,
         city,
         state,
-        zipcode,
-        productId,
-        userId,
+        zip: zipcode,
+        paymentType
       }),
       headers: { 'Content-Type': 'application/json' },
     });
