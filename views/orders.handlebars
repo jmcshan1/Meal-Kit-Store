@@ -1,18 +1,20 @@
 {{!-- order form  --}}
 {{#if logged_in}}
-<div>
-  <div>
-    <img src='{{product.picture}}' alt='Picture of Meal Kit' />
+<div class="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow max-w-md mx-auto">
+  <div class="h-56 w-full">
+    <img class="object-cover h-full w-full" src='{{product.picture}}' alt='Picture of Meal Kit' />
   </div>
-  <div>
-    <h3>{{product.product_name}}</h3>
-    <p>{{product.product_description}}</p>
+  <div class="p-4">
+    <h3 class="text-lg font-semibold">{{product.product_name}}</h3>
+    <p class="mt-2 text-gray-600">{{product.product_description}}</p>
+     <p class="mt-1 text-gray-600">Price: ${{product.price}}</p>
   </div>
 </div>
 
 {{> order-details}}
+
 {{else}}
-<div class="alert alert-warning" role="alert">
+<div class="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded relative mt-4 max-w-md mx-auto" role="alert">
     <p>You need to log in to view the product details.</p>
 </div>
 {{/if}}
