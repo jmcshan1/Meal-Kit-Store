@@ -1,16 +1,18 @@
 {{#if logged_in}}
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 {{#each products as |product|}}
-  <div>
-    <div>
-      <img src='{{picture}}' alt='Picture of Meal Kit' />
+  <div class="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+    <div class="h-56 w-full">
+      <img class="object-cover h-full w-full" src='{{picture}}' alt='Picture of Meal Kit' />
     </div>
-    <div>
-      <h3><a href="/api/products/{{this.id}}">{{product_name}}</a></h3>
+    <div class="p-4">
+      <h3 class="text-lg font-semibold hover:text-blue-500 transition-colors"><a href="/api/products/{{this.id}}">{{product_name}}</a></h3>
     </div>
   </div>
 {{/each}}
+</div>
 {{else}}
-<div class="alert alert-warning" role="alert">
+<div class="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded relative" role="alert">
     <p>You need to log in to view the products.</p>
 </div>
 {{/if}}

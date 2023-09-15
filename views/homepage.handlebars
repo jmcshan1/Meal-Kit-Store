@@ -1,35 +1,55 @@
-<main>
-  <div>
+<main class="mt-10 mx-auto w-3/4">
+  <div class="p-5 shadow-lg bg-white rounded-lg">
     {{#if logged_in}}
     {{!-- Takes to products page --}}
-    <a href="/products">
-      <button> Browse Meal Kits</button>
+    <div class="mb-4">
+    <a href="/products" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded shadow">
+      Browse All Meal Kits
     </a>
+    </div>
+    <div class="text-start mb-4">
+            --OR--
+    </div>
     
     {{!-- Drop down menu to select styles --}}
-    <form class="style-form" action="/products/style/" method="get">
-      <label for="style">Choose a Style of Meal:</label>
-      <select name="style" id="style">
-        <option value="" disabled selected>Select your Style</option>
-        {{#each styles}}
-        <option value="{{id}}">{{style_name}}</option>
-        {{/each}}
-      </select>
-        <button type="submit">Search Styles</button>
+    <form class="style-form mb-4" action="/products/style/" method="get">
+      <label for="style" class="block mb-2 text-gray-700">Choose a Style of Meal:</label>
+      <div class="relative" >
+        <select name="style" id="style" class="block appearance-none w-full bg-white border border-gray-300 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-blue-500">
+          <option value="" disabled selected>Select your Style</option>
+          {{#each styles}}
+          <option value="{{id}}">{{style_name}}</option>
+          {{/each}}
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.293 9.293L6 13V6H4v5.585L.707 8.293 2.293 6.707zM10 14v-2H8v2h2zm8-7.707L13.707 10H18V8.415L14.707 6.707 16.293 5.293zM10 6V4H8v2h2zm2 2v2h2V8h-2zm0 6v2h2v-2h-2zm0-8v6h2V6h-2z"/></svg>
+        </div>
+      </div>
+        <button type="submit" class="mt-2 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Search Styles</button>
     </form>
+
+    <div class="text-start mb-4">
+            --OR--
+    </div>
+
     {{!-- Drop down menu to select protein --}}
-    <form class="protein-form" action="/products/protien/" method="get">
-      <label for="style">Choose a protein for your Meal:</label>
-      <select name="protien" id="protein">
-        <option value="" disabled selected>Select your Protein</option>
-        {{#each protiens}}
-        <option value="{{id}}">{{protien_name}}</option>
-        {{/each}}
-      </select>
-      <button type="submit">Search Protein</button>
+    <form class="protein-form mb-4" action="/products/protien/" method="get">
+      <label for="style" class="block mb-2 text-gray-700">Choose a protein for your Meal:</label>
+      <div class="relative">
+        <select name="protien" id="protein" class="block appearance-none w-full bg-white border border-gray-300 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-blue-500">
+          <option value="" disabled selected>Select your Protein</option>
+          {{#each protiens}}
+          <option value="{{id}}">{{protien_name}}</option>
+          {{/each}}
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.293 9.293L6 13V6H4v5.585L.707 8.293 2.293 6.707zM10 14v-2H8v2h2zm8-7.707L13.707 10H18V8.415L14.707 6.707 16.293 5.293zM10 6V4H8v2h2zm2 2v2h2V8h-2zm0 6v2h2v-2h-2zm0-8v6h2V6h-2z"/></svg>
+        </div>
+      </div>
+      <button type="submit" class="mt-2 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Search Protein</button>
     </form>
     {{else}}
-    <div class="alert alert-warning" role="alert">
+    <div class="alert alert-warning p-4 mt-4 bg-yellow-100 border border-yellow-400 text-yellow-700 rounded">
     <p>You need to log in to view the products.</p>
 </div>
 {{/if}}

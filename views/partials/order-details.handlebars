@@ -1,38 +1,51 @@
 {{#if logged_in}}
-<div>
+<div class="border rounded-lg shadow-md max-w-lg mx-auto p-4 mt-4">
   <form action="">
-    <label for='userId'>User ID</label>
-    <input id="userId" type='text' value='{{user}}' required />
+    <div class="mb-4">
+      <label for='userId' class="block text-sm font-medium text-gray-600">User ID</label>
+      <input id="userId" type='text' value='{{user}}' class="mt-1 p-2 w-full border rounded-md" required />
+    </div>
+    <div class="mb-4">
+      <label for='productId' class="block text-sm font-medium text-gray-600">Product ID</label>
+      <input id="productId" type='text' value ='{{product.id}}' class="mt-1 p-2 w-full border rounded-md" placeholder='Enter Address' required />
+    </div>
+    <div class="mb-4">  
+      <label for='address' class="block text-sm font-medium text-gray-600">Address:</label>
+      <input id="address" type='text' class="mt-1 p-2 w-full border rounded-md" placeholder='Enter Address' required />
+    </div>
+    <div class="mb-4">
+      <label for='Quantity' class="block text-sm font-medium text-gray-600">Quantity:</label>
+      <input id="quantity" type='text' class="mt-1 p-2 w-full border rounded-md" placeholder='Enter Quantity' required />
+    </div>
+    <div class="mb-4">
+      <label for='City' class="block text-sm font-medium text-gray-600">City:</label>
+      <input id="city" type='text' class="mt-1 p-2 w-full border rounded-md" placeholder='Enter City' required />
+    </div>
+    <div class="mb-4">
+      <label for='State' class="block text-sm font-medium text-gray-600">State:</label>
+      <input id="state" type='text' class="mt-1 p-2 w-full border rounded-md" placeholder='Enter State' required />
+    </div>
+    <div class="mb-4">
+      <label for='Zipcode' class="block text-sm font-medium text-gray-600">Zipcode:</label>
+      <input id="zipcode" type='text' class="mt-1 p-2 w-full border rounded-md" placeholder='Enter Zipcode' required />
+    </div>
 
-    <label for='productId'>Product ID</label>
-    <input id="productId" type='text' value ='{{product.id}}' placeholder='Enter Address' required />
-
-    <label for='address'>Address:</label>
-    <input id="address" type='text' placeholder='Enter Address' required />
-
-    <label for='Quantity'>Quantity:</label>
-    <input id="quantity" type='text' placeholder='Enter Quantity' required />
-
-    <label for='City'>City:</label>
-    <input id="city" type='text' placeholder='Enter City' required />
-
-    <label for='State'>State:</label>
-    <input id="state" type='text' placeholder='Enter State' required />
-
-    <label for='Zipcode'>Zipcode:</label>
-    <input id="zipcode" type='text' placeholder='Enter Zipcode' required />
-
-<select name="payment-method" id="payment-method">
-  <option value="Card">Card</option>
-  <option value="PayPal">PayPal</option>
-  <option value="COD">COD</option>
-  <option value="Visa">Visa</option>
-</select>
-  <button id="orderButton">Submit</button>
+  <div class="mb-4">
+    <label for="payment-method" class="block text-sm font-medium text-gray-600">Payment Method</label>
+    <select name="payment-method" id="payment-method" class="mt-1 p-2 w-full border rounded-md">
+      <option value="Card">Card</option>
+      <option value="PayPal">PayPal</option>
+      <option value="COD">COD</option>
+      <option value="Visa">Visa</option>
+    </select>
+  </div>
+  <div class="mt-4">
+    <button id="orderButton">Submit</button>
+  </div>
   </form>
 </div>
 {{else}}
-<div class="alert alert-warning" role="alert">
+<div class="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded relative mt-4 max-w-md mx-auto" role="alert">
     <p>You need to log in to order products</p>
 </div>
 {{/if}}

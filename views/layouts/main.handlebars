@@ -9,27 +9,29 @@
     <title>Meal Kit Store</title>
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-100 font-sans antialiased">
     <header class='bg-blue-500 p-2 flex justify-between items-center'>
-        <a href='/'>
-            <h1 class="text-white text-2xl font-bold">
+        <a href='/' class="hover:text-white">
+            <h1 class="text-white text-3xl font-extrabold">
                 Techsperts Meal Kit Store
             </h1>
         </a>
-        <nav>
+        <nav class="text-lg space-x-4">
             {{#if logged_in}}
-            <a href='/logout' id="logout" class="text-white ml-2">Logout</a>
+            <a href='/logout' id="logout" class="text-white hover:underline">Logout</a>
             {{else}}
-            <a href='/login' class="text-white mr-2">Login</a>
-            <a href='/login' class="text-white">New User</a>
+            <a href='/login' class="text-white hover:underline">Login</a>
+            <a href='/login' class="text-white hover:underline">New User</a>
             {{/if}}
         </nav>
     </header>
-    <main class='container mx-auto mt-5'>
+    <main class='container mx-auto mt-8'>
         <img src='/assets/mealkit-background.jpg' alt='Background Image' class="w-full" />
+        <section class="p-4 bg-white rounded-lg shadow-md">
         {{{body}}}
+        </section>
     </main>
-    <footer class="bg-blue-500 p-2 text-white text-center">
+    <footer class="bg-blue-500 p-4 mt-8 text-white text-center">
         &copy; 2023 Techsperts Meal Kit Store
     </footer>
     <script src='/js/logout.js'></script>
