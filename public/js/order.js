@@ -1,14 +1,13 @@
 async function newFormHandler() {
-event.preventDefault();
-const productId = document.querySelector('#productId').value.trim();
-const userId = document.querySelector('#userId').value.trim();
-const address = document.querySelector('#address').value.trim();
-const quantity = document.querySelector('#quantity').value;
-const city = document.querySelector('#city').value.trim();
-const state = document.querySelector('#state').value.trim();
-const zipcode = document.querySelector('#zipcode').value;
-const paymentType = document.querySelector('#payment-method').value.trim();
-
+  event.preventDefault();
+  const productId = document.querySelector('#productId').value.trim();
+  const userId = document.querySelector('#userId').value.trim();
+  const address = document.querySelector('#address').value.trim();
+  const quantity = document.querySelector('#quantity').value;
+  const city = document.querySelector('#city').value.trim();
+  const state = document.querySelector('#state').value.trim();
+  const zipcode = document.querySelector('#zipcode').value;
+  const paymentType = document.querySelector('#payment-method').value.trim();
 
   if (address && quantity && city && state && zipcode && productId && userId) {
     const response = await fetch('/api/orders', {
@@ -21,17 +20,19 @@ const paymentType = document.querySelector('#payment-method').value.trim();
         city,
         state,
         zip: zipcode,
-        paymentType
+        paymentType,
       }),
       headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
       // Maybe send user to order confirmation page or successful order page
-      document.location.replace('/');
+      document.location.replace(`confirmation/${userId}`);
     } else {
       alert('Failed to create order');
     }
   }
 }
 
-document.querySelector('#orderButton').addEventListener('click', newFormHandler);
+document
+  .querySelector('#orderButton')
+  .addEventListener('click', newFormHandler);

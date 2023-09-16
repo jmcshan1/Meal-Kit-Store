@@ -1,0 +1,37 @@
+<main class="p-5 shadow-lg bg-white rounded-lg">
+
+    <div>
+        <h2 class="text-2xl font-bold mb-6">Order History:</h2>
+        {{#each orders as |order|}}
+        {{#if @first}}
+        <div class="mb-6">
+            <h2 class="text-2xl font-bold mb-4">Thank you for your order</h2>
+
+            <p class="text-gray-600">Your order has been placed and will be processed as soon as possible.</p>
+
+            <p class="mt-4 font-medium">Order Id: <span class="text-gray-700">{{order.id}}</span></p>
+
+            <p class="mt-2 font-medium">Order Date: <span class="text-gray-700">{{order.order_date}}</span></p>
+
+            <p class="mt-4 font-semibold text-indigo-600">Delivered to:</p>
+            <p class="font-medium"><span class="text-gray-700">{{order.address}}</span></p>
+            <p class="font-medium"><span class="text-gray-700">{{order.city}}, {{order.state}}, {{order.zip}}</span></p>
+            <p class="mt-4 font-medium">Payment Method: <span class="text-gray-700">{{order.paymentType}}</span></p>
+
+        </div>
+        {{else}}
+        <div class="bg-gray-100 p-4 mb-4 rounded shadow-sm">
+            <p class="font-medium">Order Date: <span class="text-gray-700">{{order.order_date}}</span></p>
+            <p class="font-medium">Order ID: <span class="text-gray-700">{{order.id}}</span></p>
+            <p class="font-medium">Product ID: <span class="text-gray-700">{{order.product_id}}</span></p>
+            <p class="font-medium">Quantity: <span class="text-gray-700">{{order.quantity}}</span></p>
+            <p class="font-medium">Address: <span class="text-gray-700">{{order.address}}</span></p>
+            <p class="font-medium">City: <span class="text-gray-700">{{order.city}}</span></p>
+            <p class="font-medium">State: <span class="text-gray-700">{{order.state}}</span></p>
+            <p class="font-medium">Zipcode: <span class="text-gray-700">{{order.zip}}</span></p>
+            <p class="font-medium">Payment Method: <span class="text-gray-700">{{order.paymentType}}</span></p>
+        </div>
+        {{/if}}
+        {{/each}}
+    </div>
+</main>

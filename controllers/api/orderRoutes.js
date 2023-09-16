@@ -50,4 +50,27 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.get('/confirmation/:id', withAuth, async (req, res) => {
+  try {
+    console.log('order confirmation route hit');
+    const orderData = await Order.findAll({
+      where: {
+        user_id: req.session.user_id
+      },
+      order: [['order_date', 'DESC']],
+    });
+    console.log('order confirmation route hit2');
+    const orders = orderData.map(order => order.get({ plain: true }));
+
+    res.render('orderConfirmation', {
+      orders,
+      logged_in: req.session.logged_in,
+    });
+    console.log('order confirmation route hit3');
+    res.status(200);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
