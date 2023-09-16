@@ -97,7 +97,7 @@ const productData = [
     picture:
       'https://images.albertsons-media.com/is/image/ABS/960293184-ECOM?$ng-ecom-pdp-desktop$&defaultImage=Not_Available',
     product_description: 'BBQ Ribs Meal Kit',
-    product_details: 'Contains ribs, sauce, and vegetables',
+    product_details: 'Contains ribs, Sauce, and Vegetables',
     protien_id: 3,
     style_id: 3,
   },
@@ -107,7 +107,7 @@ const productData = [
     picture:
       'https://images.albertsons-media.com/is/image/ABS/960196590?$ng-ecom-pdp-desktop$&defaultImage=Not_Available',
     product_description: 'Breakfast Burrito',
-    product_details: 'Contains eggs, tortilla, cheese, and toppings',
+    product_details: 'Contains: Eggs, Tortilla, Cheese, and Toppings.',
     protien_id: 3,
     style_id: 1,
   },
@@ -117,7 +117,48 @@ const productData = [
     picture:
       'https://images.squarespace-cdn.com/content/v1/582e397a37c5816ddad50609/1604084906007-0R8B492XXHD4C03OKTU7/farmacy+bowls+2.png?format=2500w',
     product_description: 'Veggie Bowl Meal Kit',
-    product_details: 'Contains rice, vegetables, and sauce',
+    product_details: 'Contains: Rice, Vegetables, and Sauce.',
+    protien_id: 6,
+    style_id: 7,
+  },
+  {
+    product_name: 'Greek Gyros',
+    price: 28.99,
+    picture: 'https://scene7.samsclub.com/is/image/samsclub/0001345438313_A',
+    product_description: 'Greek Gyros',
+    product_details:
+      'Contains: Lamb, Pita Bread, Cucumbers, Tomatoes, Red Onions, Feta Cheese, and Tzatziki Sauce.',
+    protien_id: 7,
+    style_id: 6,
+  },
+  {
+    product_name: 'Chicken Tikka Masala',
+    price: 15.99,
+    picture:
+      'https://www.instacart.com/image-server/466x466/filters:fill(FFF,true):format(webp)/www.instacart.com/assets/domains/product-image/file/large_64605b41-3533-4acf-b680-2673892a14f6.jpg',
+    product_description: 'Chicken Tikka Masala',
+    product_details:
+      'Contains: Basmati Rice, Curry Sauce, Chicken, Naan Bread, and Chutney.',
+    protien_id: 1,
+    style_id: 8,
+  },
+  {
+    product_name: 'Barbacoa',
+    price: 17.99,
+    picture:
+      'https://www.instacart.com/image-server/466x466/filters:fill(FFF,true):format(webp)/www.instacart.com/assets/domains/product-image/file/large_d96b732b-0e3d-4297-ac65-5ac3857f0aa0.jpg',
+    product_description: 'Barbacoa',
+    product_details: 'Contains: Beef, Tomatoes, Salt, and Spices.',
+    protien_id: 2,
+    style_id: 1,
+  },
+  {
+    product_name: 'Vegan Meal Kit',
+    price: 12.99,
+    picture:
+      'https://www.foodbev.com/wp-content/uploads/2017/07/amazonmealkit2.jpg',
+    product_description: 'Vegan Meal Kit',
+    product_details: 'Contains: Pita, Tomatoes, String Beans, Olive Oil and Spices',
     protien_id: 6,
     style_id: 7,
   },

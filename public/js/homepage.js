@@ -1,25 +1,20 @@
-document
-  .getElementById('style-form')
-  .addEventListener('submit', function (event) {
+// Style Form Prevent Blank Submission
+console.log('HomePage FOrm Selector Control Loaded');
+document.querySelector('.style-form').addEventListener('submit', (event) => {
+  const styleInput = document.querySelector('.style');
+  if(styleInput.value === '') {
     event.preventDefault();
-    const style = document.getElementById('style').value;
+    alert('Please enter a style');
+  }
+});
 
-    if (!style) {
-      return;
-    }
-
-    window.location.href = '/product/style/${style)';
-  });
-
-document
-  .getElementById('protien-form')
-  .addEventListener('submit', function (event) {
+//Protein Form Prevent Blank Submission
+document.querySelector('.protein-form').addEventListener('submit', (event) => {
+  console.log('HomePage FOrm Selector Control line 13');
+  const proteinInput = document.querySelector('.protein');
+  if(proteinInput.value === '') {
     event.preventDefault();
-    const protien = document.getElementById('style').value;
-
-    if (!protien) {
-      return;
-    }
-
-    window.location.href = '/product/protien/${protien)';
-  });
+    alert('Please enter a protein');
+  }
+});
+console.log('HomePage FOrm Selector Control Loaded');

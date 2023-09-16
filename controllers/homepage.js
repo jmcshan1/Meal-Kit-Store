@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Style, Protien, Product, User } = require('../models');
+const { Style, Protien, Product } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/login', async (req, res) => {
@@ -49,17 +49,17 @@ router.get('/products', withAuth, async (req, res) => {
 router.get('/products/protien/', withAuth, async (req, res) => {
   try {
     const protienId = req.query.protien;
+    console.log(protienId);
 
     if (!protienId) {
-      return res.status (400).json({ message: 'No protien selected' });
+      // return res.status (400).json({ message: 'No protien selected' });
+      return res.redirect('/');
     }
-
     const productData = await Product.findAll({
       where: {
         protien_id: protienId,
       },
     });
-
     const products = productData.map((product) => product.get({ plain: true }));
 
     res.render('products', {
@@ -95,5 +95,6 @@ router.get('/products/style/', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 module.exports = router;

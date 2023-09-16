@@ -21,6 +21,10 @@ const styleData = [
   {
     style_name: 'Vegitarian',
   },
+  {
+    style_name: 'Indian',
+  },
+
 ];
 
 const seedStyle = () => Style.bulkCreate(styleData);
