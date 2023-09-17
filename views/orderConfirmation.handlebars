@@ -11,7 +11,7 @@
 
             <p class="mt-4 font-medium">Order Id: <span class="text-gray-700">{{order.id}}</span></p>
 
-            <p class="mt-2 font-medium">Order Date: <span class="text-gray-700">{{order.order_date}}</span></p>
+            <p class="mt-2 font-medium">Order Date: <span class="text-gray-700">{{format_date order.order_date}}</span></p>
 
             <p class="mt-4 font-semibold text-indigo-600">Delivered to:</p>
             <p class="font-medium"><span class="text-gray-700">{{order.address}}</span></p>
@@ -21,7 +21,7 @@
         </div>
         {{else}}
         <div class="bg-gray-100 p-4 mb-4 rounded shadow-sm">
-            <p class="font-medium">Order Date: <span class="text-gray-700">{{order.order_date}}</span></p>
+            <p class="font-medium">Order Date: <span class="text-gray-700">{{format_date order.order_date}}</span></p>
             <p class="font-medium">Order ID: <span class="text-gray-700">{{order.id}}</span></p>
             <p class="font-medium">Product ID: <span class="text-gray-700">{{order.product_id}}</span></p>
             <p class="font-medium">Quantity: <span class="text-gray-700">{{order.quantity}}</span></p>
