@@ -76,7 +76,8 @@ router.get('/products/style/', withAuth, async (req, res) => {
     const styleId = req.query.style;
 
     if (!styleId) {
-      return res.status (400).json({ message: 'No style selected' });
+      // return res.status (400).json({ message: 'No style selected' });
+      return res.redirect('/');
     }
 
     const productData = await Product.findAll({
