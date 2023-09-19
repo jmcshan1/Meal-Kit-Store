@@ -1,18 +1,22 @@
 {{!-- order form  --}}
+{{!-- Checks if user is logged in and only displays page if they are logged in  --}}
 {{#if logged_in}}
 <div class="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow max-w-md mx-auto">
   <div class="h-56 w-full">
+    {{!-- display product picture  --}}
     <img class="object-cover h-full w-full" src='{{product.picture}}' alt='Picture of Meal Kit' />
   </div>
   <div class="p-4">
+    {{!-- display product name and description and price  --}}
     <h3 class="text-lg font-semibold">{{product.product_name}}</h3>
     <p class="mt-2 text-gray-600">{{product.product_description}}</p>
      <p class="mt-1 text-gray-600">Price: ${{product.price}}</p>
   </div>
 </div>
-
+{{!-- display order details form (partial) --}}
 {{> order-details}}
 
+{{!-- if user is not logged in - display this  --}}
 {{else}}
 <div class="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded relative mt-4 max-w-md mx-auto" role="alert">
     <p>You need to log in to view the product details.</p>

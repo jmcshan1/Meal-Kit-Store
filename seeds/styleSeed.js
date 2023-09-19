@@ -1,4 +1,6 @@
 const { Style } = require('../models');
+
+// Stores the data for all of the different styles of meals
 const styleData = [
   {
     style_name: 'Mexican',
@@ -27,6 +29,8 @@ const styleData = [
 
 ];
 
+//create and export function
 const seedStyle = () => Style.bulkCreate(styleData);
 
+//export seedStyle
 module.exports = seedStyle;

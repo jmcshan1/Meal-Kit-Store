@@ -1,9 +1,22 @@
-# 15 Project 2: Interactive Full-Stack Application
+# Techspert Meal Kit E-Commerce Site
 
-Description
-E-commerce site where we sell a number of meal kits availible for mail order.
 
-User Story
+## Screenshot
+![Tech Blog Preview](/assets/Home-Page-SC.PNG)
+
+## Description
+Meal Kit E-Commerce site offers the user the ability to browse all meal kits or filter them by there protein (pork, beef, seafood and even vegetarian) as well as by the style (Mexican, Asian, Continental etc.) Users can also look at an items details and see the price and ingredients and place an order and see their order history.
+
+## Table of Contents
+  - [User Story](#user-story)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contribution](#contribution)
+  - [Testing](#testing)
+  - [License](#license)
+  - [Links](#Links)
+
+## User Story
 
 AS A developer who owns a meal-kit company
 I WANT an e-commerce website
@@ -35,3 +48,37 @@ Then they are presented with a name and address field as well as a quantity of t
 When they submit the order
 Then the order is stored in a backend database with quantity and payment
 
+## Installation
+
+- [dotenv package](https://www.npmjs.com/package/dotenv) 
+
+- [express-handlebars](https://www.npmjs.com/package/express-handlebars)
+
+- [MySQL2](https://www.npmjs.com/package/mysql2)
+
+- [Sequelize](https://www.npmjs.com/package/sequelize)
+
+- [Express.js](https://www.npmjs.com/package/express)
+
+- [bcrypt package](https://www.npmjs.com/package/bcrypt)  
+
+- [express-session](https://www.npmjs.com/package/express-session)  
+
+- [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize) 
+
+## Usage
+To use this application you can visit the deployed website on Heroku or by cloning the repository and running the application on your local server by executing the schema file and seeding the databse and running npm start. Link the deployed page and Git Hub repor are provided below.
+
+## Contribution
+This application is homework for Northwest Coding Bootcamp and is complete, there is no need for any contributions.
+
+## Testing
+You can test this application  by running the command line prompt "npm start" after installing the required node packages and opening the browser and navigating to localhost:3001.
+
+## Licenses
+    None
+    
+## Links
+Git Hub Repo: https://github.com/jmcshan1/Meal-Kit-Store 
+
+Deployed Web Site: https://techspert-meal-kit-store-7b3c1ba1d6db.herokuapp.com/login

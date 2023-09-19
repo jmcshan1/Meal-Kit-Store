@@ -8,7 +8,7 @@
     <link rel='stylesheet' href='../../public/css/style.css' />
     <title>Meal Kit Store</title>
 </head>
-
+{{!-- created application header --}}
 <body class="bg-gray-100 font-sans antialiased">
     <header class='bg-blue-500 p-2 flex justify-between items-center'>
         <a href='/' class="hover:text-white">
@@ -16,6 +16,7 @@
                 Techsperts Meal Kit Store
             </h1>
         </a>
+        {{!-- created login/logout buttons --}}
         <nav class="text-lg space-x-4">
             {{#if logged_in}}
             <a href='#' id="logout" class="text-white hover:underline">Logout</a>
@@ -25,6 +26,7 @@
             {{/if}}
         </nav>
     </header>
+    {{!-- added meal-kit image --}}
     <main class='container mx-auto mt-8'>
         <img src='/assets/mealkit-background.jpg' alt='Background Image' class="w-full" />
         <section class="p-4 bg-white rounded-lg shadow-md">

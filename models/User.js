@@ -1,7 +1,9 @@
+//required dependencies
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
 
+//create User model
 class User extends Model {
   // checkPassword(instance method)
   checkPassword(loginPw) {
@@ -9,6 +11,7 @@ class User extends Model {
   }
 }
 
+//create fields/columns for User model
 User.init(
   {
     id: {
@@ -41,6 +44,7 @@ User.init(
       }
     },
   },
+  // hooks are automatic methods that run during various phases of the User Model lifecycle
   {
     hooks: {
       // set up beforeCreate lifecycle "hook" functionality
@@ -65,4 +69,5 @@ User.init(
   }
 );
 
+//export User model
 module.exports = User;

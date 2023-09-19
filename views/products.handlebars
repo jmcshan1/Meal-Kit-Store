@@ -1,5 +1,6 @@
 {{#if logged_in}}
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+{{!-- Loops through each products and for each loops, a picture and the product name is displayed --}}
 {{#each products as |product|}}
   <div class="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
     <div class="h-56 w-full">
@@ -12,6 +13,7 @@
 {{/each}}
 </div>
 {{else}}
+{{!-- If the user is not logged in and they somehow manage to reach this page, a message is shown telling them they need to login --}}
 <div class="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded relative" role="alert">
     <p>You need to log in to view the products.</p>
 </div>

@@ -1,5 +1,7 @@
+//order form handler
 async function newFormHandler() {
   event.preventDefault();
+  //get values from form
   const productId = document.querySelector('#productId').value.trim();
   const userId = document.querySelector('#userId').value.trim();
   const address = document.querySelector('#address').value.trim();
@@ -8,7 +10,7 @@ async function newFormHandler() {
   const state = document.querySelector('#state').value.trim();
   const zipcode = document.querySelector('#zipcode').value;
   const paymentType = document.querySelector('#payment-method').value.trim();
-
+//if all values are present, make a post request to create a new order
   if (address && quantity && city && state && zipcode && productId && userId) {
     const response = await fetch('/api/orders', {
       method: 'POST',
@@ -32,7 +34,7 @@ async function newFormHandler() {
     }
   }
 }
-
+//event listener for order button
 document
   .querySelector('#orderButton')
   .addEventListener('click', newFormHandler);

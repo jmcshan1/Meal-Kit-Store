@@ -1,8 +1,9 @@
+//required dependencies
 const {Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
-
+//create Product model
 class Product extends Model {}
-
+//create fields/columns for Product model
 Product.init(
   {
     id: {
@@ -58,4 +59,5 @@ Product.init(
   }
 );
 
+//export model
 module.exports = Product;

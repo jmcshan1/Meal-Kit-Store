@@ -1,8 +1,11 @@
+//required dependencies
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+//create Protien model
 class Protien extends Model {}
 
+//create fields/columns for Protien model
 Protien.init(
   {
     id: {
@@ -25,4 +28,5 @@ Protien.init(
   }
 );
 
+//export Protien model
 module.exports = Protien;
