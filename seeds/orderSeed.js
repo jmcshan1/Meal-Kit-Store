@@ -1,5 +1,7 @@
+//require models
 const { Order } = require('../models');
 
+//create and export data
 const orderData = [
   {
     user_id: 1,
@@ -13,6 +15,7 @@ const orderData = [
   },
 ];
 
+//create and export function
 const seedOrders = () => Order.bulkCreate(orderData);
-
+//export seedOrders
 module.exports = seedOrders;

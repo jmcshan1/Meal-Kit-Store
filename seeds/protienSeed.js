@@ -23,6 +23,8 @@ const protienData = [
   },
 ];
 
+//create and export function
 const seedProtien = () => Protien.bulkCreate(protienData);
 
+//export seedProtien
 module.exports = seedProtien;

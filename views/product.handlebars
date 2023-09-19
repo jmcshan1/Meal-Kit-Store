@@ -1,3 +1,4 @@
+{{!-- Page for the individual product --}}
 {{#if logged_in}}
 <div class="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow max-w-md mx-auto">
   <div class="h-56 w-full">
@@ -14,6 +15,7 @@
   </div>
 </div>
 {{else}}
+{{!-- If the user is not logged in and they somehow manage to reach this page, a message is shown telling them they need to login --}}
 <div class="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded relative mt-4 max-w-md mx-auto" role="alert">
     <p>You need to log in to view the product information.</p>
 </div>

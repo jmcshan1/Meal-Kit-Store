@@ -1,8 +1,11 @@
+//reqiured dependencies
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+//create Style model
 class Style extends Model {}
 
+//create fields/columns for Style model
 Style.init(
   {
     id: {
@@ -25,4 +28,5 @@ Style.init(
   }
 );
 
+//export Style model
 module.exports = Style;

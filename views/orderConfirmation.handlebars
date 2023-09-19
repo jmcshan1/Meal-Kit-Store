@@ -2,7 +2,9 @@
 
     <div>
         <h2 class="text-2xl font-bold mb-6">Order History:</h2>
+        {{!-- For loop that loops through each order  and give details on that order--}}
         {{#each orders as |order|}}
+        {{!-- For the most recent order which would be the product they just ordered, it gives an order confirmation message to the user.--}}
         {{#if @first}}
         <div class="mb-6">
             <h2 class="text-2xl font-bold mb-4">Thank you for your order</h2>

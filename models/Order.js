@@ -1,8 +1,11 @@
+//required dependencies
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+//create Order model
 class Order extends Model {}
 
+//create fields/columns for Order model
 Order.init(
   {
     id: {
@@ -65,4 +68,5 @@ Order.init(
   }
 );
 
+//export Order model
 module.exports = Order;

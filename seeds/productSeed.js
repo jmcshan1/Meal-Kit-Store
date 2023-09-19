@@ -1,5 +1,7 @@
+//required dependencies
 const { Product } = require('../models');
 
+//product data
 const productData = [
   {
     product_name: 'Classic Italian Meal Kit',
@@ -164,6 +166,7 @@ const productData = [
   },
 ];
 
+//function to seed product data
 const seedProducts = () => Product.bulkCreate(productData);
-
+//export seedProducts
 module.exports = seedProducts;

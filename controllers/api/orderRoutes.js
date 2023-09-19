@@ -6,10 +6,8 @@ router.get('/:id', withAuth, async (req, res) => {
   console.log('order route hit');
   try {
     const productData = await Product.findByPk(req.params.id);
-    // const userData = await User.findAll();
 
     const product = productData.get({ plain: true });
-    // const user = userData.map((user) => user.get({ plain: true }));
     const user = req.session.user_id;
 
     res.render('orders', {
